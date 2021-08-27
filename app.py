@@ -36,12 +36,13 @@ def init_user_table():
                  "first_name TEXT NOT NULL,"
                  "last_name TEXT NOT NULL,"
                  "username TEXT NOT NULL,"
-                 "password TEXT NOT NULL)")
+                 "password TEXT NOT NULL,"
+                 "email NOT NULL)")
     print("user table created successfully")
     conn.close()
 
 
-def init_comic_table():
+def init_property_table():
     with sqlite3.connect('real.db') as conn:
         # creating product table
         conn.execute("CREATE TABLE IF NOT EXISTS property(id INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -54,10 +55,9 @@ def init_comic_table():
 
 
 init_user_table()
-init_comic_table()
+init_property_table()
 
 users = fetch_users()
-
 
 username_table = {u.username: u for u in users}
 userid_table = {u.id: u for u in users}
