@@ -50,6 +50,7 @@ def init_property_table():
                      "description TEXT NOT NULL,"
                      "price TEXT NOT NULL,"
                      "category TEXT NOT NULL,"
+                     "location TEXT NOT NULL,"
                      "date_created TEXT NOT NULL)")
     print("Property table created successfully.")
 
@@ -124,7 +125,8 @@ def user_registration():
                            "first_name,"
                            "last_name,"
                            "username,"
-                           "password) VALUES(?, ?, ?, ?)", (first_name, last_name, username, password))
+                           "password,"
+                           "email) VALUES(?, ?, ?, ?)", (first_name, last_name, username, password, email))
             conn.commit()
             response["message"] = "success"
             response["status_code"] = 201
@@ -138,29 +140,39 @@ def user_registration():
 
 # Function to add products to the cart
 @app.route('/add-prop/', methods=["POST"])
-@jwt_required()
-def add_product():
+# @jwt_required()
+def add_property():
     response = {}
 
     if request.method == "POST":
-        title = request.form['title']
-        description = request.form['description']
-        price = request.form['price']
-        category = request.form['category']
-        date_created = datetime.datetime.now()
+        try:
+            title = request.form['title']
+            description = request.form['description']
+            price = request.form['price']
+            category = request.form['category']
+            location = request.form['location']
+            date_created = datetime.datetime.now()
 
-        with sqlite3.connect('real.db') as conn:
-            cursor = conn.cursor()
-            cursor.execute("INSERT INTO property("
-                           "title,"
-                           "description,"
-                           "price,"
-                           "category,"
-                           "date_created) VALUES(?, ?, ?, ?, ?)", (title, description, price, category, date_created))
-            conn.commit()
-            response["status_code"] = 201
-            response['description'] = "Product added successfully"
-        return response
+            with sqlite3.connect('real.db') as conn:
+                cursor = conn.cursor()
+                cursor.execute("INSERT INTO property("
+                               "title,"
+                               "description,"
+                               "price,"
+                               "category,"
+                               "location,"
+                               "date_created) VALUES(?, ?, ?, ?, ?, ?)",
+                               (title, description, price, category, location, date_created))
+                conn.commit()
+                response["status_code"] = 201
+                response['description'] = "Property added successfully"
+
+        except Exception as x:
+            conn.rollback()
+            response["description"] = "Error occurred while trying to add property" + str(x)
+        finally:
+            conn.close()
+            return response
 
 
 # function to view the entire cart
@@ -180,7 +192,7 @@ def get_cart():
 
 # function to remove a product from cart
 @app.route("/remove-prop/<int:product_id>")
-@jwt_required()
+# @jwt_required()
 def remove_product(product_id):
     response = {}
     with sqlite3.connect("real.db") as conn:
@@ -194,7 +206,7 @@ def remove_product(product_id):
 
 # function to edit a specific characteristic of a product
 @app.route('/edit-prop/<int:product_id>/', methods=["PUT"])
-@jwt_required()
+# @jwt_required()
 def edit_product(product_id):
     response = {}
 
