@@ -2,10 +2,12 @@ import hmac
 import sqlite3
 import datetime
 
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_jwt import JWT, jwt_required, current_identity
 from flask_cors import CORS
 from flask_mail import Mail, Message
+import cloudinary
+from cloudinary import uploader
 
 
 class User(object):
@@ -146,12 +148,23 @@ def add_property():
 
     if request.method == "POST":
         try:
-            title = request.form['title']
-            description = request.form['description']
-            price = request.form['price']
-            category = request.form['category']
-            location = request.form['location']
+            title = request.json['title']
+            description = request.json['description']
+            price = request.json['price']
+            category = request.json['category']
+            location = request.json['location']
+            img = request.json['img']
             date_created = datetime.datetime.now()
+
+            cloudinary.config(cloud_name='dkjvy0lsk', api_key='341771532432914',
+                              api_secret='860zypKrIl-scl-EGZxNjwkAm-8')
+            upload_result = None
+
+            app.logger.info('%s file_to_upload', product_image)
+            if product_image:
+                upload_result = cloudinary.uploader.upload(product_image)   # Upload results
+                app.logger.info(upload_result)
+                data = jsonify(upload_result)
 
             with sqlite3.connect('real.db') as conn:
                 cursor = conn.cursor()
