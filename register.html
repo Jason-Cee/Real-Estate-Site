@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <img src="/images/estate-logo.png" alt="Logo">
+                <div class="logo_name"></div>
+            </div>
+            <i class="fas fa-dungeon" id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="#">
+                    <i class="fas fa-home"></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="far fa-money-bill-alt"></i>
+                    <span class="links_name">Property</span>
+                </a>
+                <span class="tooltip">Property</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="far fa-comment-dots"></i>
+                    <span class="links_name">Testimonials</span>
+                </a>
+                <span class="tooltip">Testimonials</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-phone"></i>
+                    <span class="links_name">Contact</span>
+                </a>
+                <span class="tooltip">Contact</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-user"></i>
+                    <span class="links_name">Login</span>
+                </a>
+                <span class="tooltip">Login</span>
+            </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <img src="/images/profile.jpg" alt="Jason">
+                    <div class="name_job">
+                        <div class="name">Jason Calvert</div>
+                        <div class="job">Web Developer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <a href="/register.html" class="inactive underlineHover">Sign Up </a>
+    
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+        </div>
+    
+        <!-- Login Form -->
+        <form>
+          <input type="text" id="login" class="fadeIn second" name="login" placeholder="username">
+          <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+          <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+    
+        <!-- Footer -->
+        <div id="formFooter"></div>
+    
+      </div>
+    </div>
+</body>
+<script src="/script/login.js"></script>
+</html>
