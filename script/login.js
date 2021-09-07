@@ -33,17 +33,11 @@ function login(username, password) {
         myStorage.setItem("jwt-token", data["access_token"]);
         myStorage.setItem("username", username);
         myStorage.setItem("password", password);
-        window.location.href = "./app.html";
+        window.location.href = "/index.html";
       }
     });
 }
 
-// document.querySelector("#login_form").addEventListener("submit", (e) => {
-//   let username = document.querySelector("#username-input").value;
-//   let password = document.querySelector("#password-input").value;
-//   e.preventDefault();
-//   login(username, password);
-// });
 
 // -------------------------------------------------------------- //
 // -------------------- REGISTER FUNCTION ---------------------- //
@@ -86,7 +80,7 @@ function registerUser() {
 
         if (data["message"] == "Success") {
           alert("Please Sign In On Next Page");
-          window.location.href = "./index.html";
+          window.location.href = "./login.html";
         } else {
           alert("Please Fill In The Required Fields Correctly");
         }

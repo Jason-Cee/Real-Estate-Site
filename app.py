@@ -153,7 +153,7 @@ def add_property():
             price = request.json['price']
             category = request.json['category']
             location = request.json['location']
-            img = request.json['img']
+            product_image = request.json['img']
             date_created = datetime.datetime.now()
 
             cloudinary.config(cloud_name='dkjvy0lsk', api_key='341771532432914',

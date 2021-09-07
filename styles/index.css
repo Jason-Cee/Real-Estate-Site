@@ -9,7 +9,24 @@ body{
     position: relative;
     height: 100vh;
     width: 100vw;
-    background: #ffba08;
+    background: linear-gradient(#081c15,
+    #1b4332,
+    #2d6a4f,
+    #40916c,
+    #52b788,
+    #74c69d,
+    #95d5b2,
+    #b7e4c7,
+    #d8f3dc,
+    #d8f3dc, 
+    #b7e4c7,
+    #95d5b2,
+    #74c69d, 
+    #52b788,
+    #40916c, 
+    #2d6a4f, 
+    #1b4332, 
+    #081c15);
 
 }
 
@@ -22,7 +39,7 @@ body{
     top: 0;
     left: 0;
     padding: 6px 14px;
-    background: #f48c06;
+    background: #2d6a4f;
     transition: all 0.5s ease-in-out;
 }
 
@@ -32,7 +49,7 @@ body{
 
 .logo{
     margin-top: 40px;
-    color: #370617;
+    color: white;
     display: flex;
     height: 50px;
     width: 100%;
@@ -62,13 +79,20 @@ body{
     left: 22%;
     top: 10px;
     font-size: 20px;
-    color: #370617;
+    color: white;
     height: 50px;
     width: 50px;
     text-align: center;
     line-height: 50px;
     opacity: 1;
     cursor: pointer;
+    transition: ease-in-out 0.5s;
+}
+
+.sidebar #btn:hover{
+  font-size: 3rem;
+
+
 }
 
 .sidebar.active #btn{
@@ -98,7 +122,7 @@ body{
     border-radius: 6px;
     height: 35px;
     width: 122px;
-    background: #ffba08;
+    background: white;
     line-height: 35px;
     text-align: center;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2) ;
@@ -124,20 +148,21 @@ body{
     top: 50%;
 }
 .sidebar ul li a {
-    color: #370617;
+    color: white;
     display: flex;
     align-items: center;
     text-decoration: none;
     border-radius: 12px;
     transition: all 0.5s ease-in-out;
     margin-top: 65px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     white-space: nowrap;
 }
 
 .sidebar ul li a:hover{
-    color: #11101d;
-    background: #ffba08;
+    color: white;
+    background: #2d6a4f;
+    font-size: 3rem;
 }
 
 
@@ -163,7 +188,7 @@ body{
 
 .profile_content{
     position: absolute;
-    color: #370617;
+    color: white;
     bottom: 0;
     left: 0;
 }
@@ -172,8 +197,8 @@ body{
     position:relative;
     padding: 10px 6px;
     height: 60px;
-    width: 17vw;
-    background: #ffba08;
+    width: 15vw;
+    background: #2d6a4f;
     opacity: 0;
     pointer-events: none;
     white-space: nowrap;
@@ -226,11 +251,34 @@ body{
 
 /* ---------- PRODUCTS ---------- */
 
+.image{
+  background: #2d6a4f;
+  width: 35vw;
+  left: 5.5vw;
+  height: 45vh;
+  text-align: center;
+  margin: 40px;
+  flex-direction: row;
+}
+
+
+
+.image img{
+  object-fit: cover;
+  margin: 30px;
+}
 .container{
     position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
     width: calc(100% - 5.5vw);
     left: 5.5vw;
     margin: 12px;
+    height: 100vh;
+    overflow-y: scroll;
     transition: 0.5s ease-in-out all;
 }
 
@@ -239,10 +287,7 @@ body{
     left:15vw;
 }
 
-.description{
-    width: 40vh;
-    text-align: center;
-}
+
 
 
 /* ---------- LOGIN ---------- */
@@ -251,7 +296,7 @@ body{
 /* BASIC */
 
 html {
-  background-color: #f48c06;
+  background-color: #2d6a4f;
 }
 
 body {
@@ -260,7 +305,7 @@ body {
 }
 
 a {
-  color: #ffba08;
+  color: white;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -273,7 +318,7 @@ h2 {
   text-transform: uppercase;
   display:inline-block;
   margin: 40px 8px 10px 8px; 
-  color: #ffba08;
+  color: white;
 }
 
 
@@ -291,6 +336,8 @@ h2 {
 }
 
 #formContent {
+  left: 35%;
+  top: 15%;
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
@@ -305,7 +352,7 @@ h2 {
 }
 
 #formFooter {
-  background-color: #f48c06;
+  background-color: #2d6a4f;
   border-top: 1px solid #dce8f1;
   padding: 25px;
   text-align: center;
@@ -318,12 +365,14 @@ h2 {
 /* TABS */
 
 h2.inactive {
+  font-size: 3rem;
   color: #0d0d0d;
 }
 
 h2.active {
   color: #0d0d0d;
-  border-bottom: 2px solid #ffba08;
+  font-size: 3rem;
+  border-bottom: 2px solid #2d6a4f;
 }
 
 
@@ -331,7 +380,7 @@ h2.active {
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #ffba08;
+  background-color: #2d6a4f;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -353,7 +402,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #f48c06;
+  background-color: #2d6a4f;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -387,11 +436,11 @@ input[type=text] {
 
 input[type=text]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #f48c06;
+  border-bottom: 2px solid #2d6a4f;
 }
 
 input[type=text]:placeholder {
-  color: #ffba08;
+  color:#2d6a4f;
 }
 
 
@@ -460,6 +509,9 @@ input[type=text]:placeholder {
   animation-delay: 0.4s;
 }
 
+.fadeIn.first i{
+  font-size: 2rem;
+}
 .fadeIn.second {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
@@ -485,16 +537,21 @@ input[type=text]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #f48c06;
+  font-size: 2rem;
+  background-color: #2d6a4f;
   content: "";
   transition: width 0.2s;
 }
-
+.underlineHover{
+  font-size: 2rem;
+}
 .underlineHover:hover {
+  font-size: 2rem;
   color: #0d0d0d;
 }
 
 .underlineHover:hover:after{
+  font-size: 2rem;
   width: 100%;
 }
 
@@ -513,3 +570,145 @@ input[type=text]:placeholder {
 * {
   box-sizing: border-box;
 }
+
+
+
+
+.product-button {
+  border: solid 2px #464646;
+  border-radius: 40px;
+  padding: 10px 40px;
+  text-decoration: none;
+  color: #464646;
+  font-family: sans-serif;
+  font-size: 16px;
+  transition: 0.3s ease-in;
+}
+
+.product-button:hover {
+  background-color: #2d6a4f;
+  color: white;
+  border: solid 2px #2d6a4f;
+}
+
+
+/* Modal Styling */
+#modal {
+  display: none;
+}
+ 
+/* #modal.modal-active {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  z-index: 100;
+  width: 50vw;
+  height: 40vh;
+  transform: translate(-50%, -50%);
+} */
+
+#modal.modal-active {
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  border-radius: 70px;
+  display: flex;
+  flex-direction: row;
+  padding: 5% 50px;
+  background: white;
+  margin-top: 25px;
+  margin-left: -2%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background: linear-gradient(#d8f3dc, 
+                              #b7e4c7,
+                              #95d5b2,
+                              #74c69d, 
+                              #52b788,
+                              #40916c, 
+                              #2d6a4f, 
+                              #1b4332, 
+                              #081c15);
+  z-index: 1;
+  position:fixed;
+}
+.modal-images {
+  /* display: flex; */
+  /* right: -50%; */
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+  min-width: 50%;
+  height: 700px;
+}
+
+.modal-content {
+  min-width: 50%;
+  height: 25vh;
+}
+
+.big-modal-image {
+  display: flex;
+  top: 0;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.big-modal-image:hover {
+  width: 60%;
+  object-fit: cover;
+}
+.small-modal-images {
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease-in;
+  margin-top: 90px;
+  margin-left: 47rem;
+}
+
+.small-modal-image {
+  /* margin-top: 20px; */
+  width: 180px;
+}
+
+.small-modal-image:hover {
+  margin-top: 20px;
+  width: 300px;
+}
+#modal i {
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#modal h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 0;
+}
+#modal h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.addtocart{
+  font-size: 2rem;
+  /* background: none; */
+  position: relative;
+  color: #40916c;
+  cursor: pointer;
+  height: 5vh;
+  left: -20%;
+  bottom: -100%;
+} 
