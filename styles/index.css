@@ -589,6 +589,7 @@ input[type=text]:placeholder {
   background-color: #2d6a4f;
   color: white;
   border: solid 2px #2d6a4f;
+  cursor: pointer;
 }
 
 
