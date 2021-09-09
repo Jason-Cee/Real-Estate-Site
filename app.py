@@ -115,7 +115,6 @@ def user_registration():
     response = {}
 
     if request.method == "POST":
-
         first_name = request.json['first_name']
         last_name = request.json['last_name']
         username = request.json['username']
@@ -135,11 +134,11 @@ def user_registration():
             response["status_code"] = 201
     return response
 
-            # if response['status_code'] == 201:
-            #     msg = Message('success', sender='jasondoescoding@gmail.com', recipients=[email])
-            #     msg.body = 'Registration successful.'
-            #     mail.send(msg)
-            #     return "Registration Successful"
+    # if response['status_code'] == 201:
+    #     msg = Message('success', sender='jasondoescoding@gmail.com', recipients=[email])
+    #     msg.body = 'Registration successful.'
+    #     mail.send(msg)
+    #     return "Registration Successful"
 
 
 @app.route("/auth/", methods=["POST"])
