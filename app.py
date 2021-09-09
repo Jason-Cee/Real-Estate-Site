@@ -133,7 +133,7 @@ def user_registration():
             response["message"] = "success"
             response["status_code"] = 201
     return response
-
+    #
     # if response['status_code'] == 201:
     #     msg = Message('success', sender='jasondoescoding@gmail.com', recipients=[email])
     #     msg.body = 'Registration successful.'
