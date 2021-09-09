@@ -11,7 +11,6 @@
 // -------------------- LOGIN FUNCTION ---------------------- //
 
 
-// login
 const baseURL = "https://stormy-tundra-96699.herokuapp.com/auth/";
 
 function login() {
@@ -61,11 +60,11 @@ function registerUser() {
   } catch (e) {
     alert("Error: " + e);
   } finally {
-    fetch("https://stormy-tundra-96699.herokuapp.com/registration", {
+    fetch("https://stormy-tundra-96699.herokuapp.com/registration/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      // headers: {
+      //   "Content-Type": "application/json",
+      // },
       body: JSON.stringify({
         first_name: name,
         last_name: surname,

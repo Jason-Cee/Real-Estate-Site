@@ -116,11 +116,11 @@ def user_registration():
 
     if request.method == "POST":
 
-        first_name = request.form['first_name']
-        last_name = request.form['last_name']
-        username = request.form['username']
-        password = request.form['password']
-        email = request.form['email']
+        first_name = request.json['first_name']
+        last_name = request.json['last_name']
+        username = request.json['username']
+        password = request.json['password']
+        email = request.json['email']
 
         with sqlite3.connect("real.db") as conn:
             cursor = conn.cursor()
@@ -133,12 +133,13 @@ def user_registration():
             conn.commit()
             response["message"] = "success"
             response["status_code"] = 201
+    return response
 
-            if response['status_code'] == 201:
-                msg = Message('success', sender='jasondoescoding@gmail.com', recipients=[email])
-                msg.body = 'Registration successful.'
-                mail.send(msg)
-                return "Registration Successful"
+            # if response['status_code'] == 201:
+            #     msg = Message('success', sender='jasondoescoding@gmail.com', recipients=[email])
+            #     msg.body = 'Registration successful.'
+            #     mail.send(msg)
+            #     return "Registration Successful"
 
 
 @app.route("/auth/", methods=["POST"])
