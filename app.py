@@ -4,7 +4,7 @@ import datetime
 
 from flask import Flask, request, jsonify
 from flask_jwt import JWT, jwt_required, current_identity
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from flask_mail import Mail, Message
 import cloudinary
 from cloudinary import uploader
@@ -82,7 +82,7 @@ app.debug = True
 app.config['SECRET_KEY'] = 'super-secret'
 # allows an extension on the token time limit
 app.config['JWT_EXPIRATION_DELTA'] = datetime.timedelta(seconds=4000)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USERNAME'] = "jasondoescoding@gmail.com"
@@ -110,6 +110,7 @@ def protected():
 
 # Function to register users
 @app.route('/registration/', methods=["POST"])
+@cross_origin()
 def user_registration():
     response = {}
 
@@ -128,7 +129,7 @@ def user_registration():
                            "last_name,"
                            "username,"
                            "password,"
-                           "email) VALUES(?, ?, ?, ?)", (first_name, last_name, username, password, email))
+                           "email) VALUES(?, ?, ?, ?, ?)", (first_name, last_name, username, password, email))
             conn.commit()
             response["message"] = "success"
             response["status_code"] = 201
@@ -137,7 +138,33 @@ def user_registration():
                 msg = Message('success', sender='jasondoescoding@gmail.com', recipients=[email])
                 msg.body = 'Registration successful.'
                 mail.send(msg)
-                return "Message sent"
+                return "Registration Successful"
+
+@app.route("/auth/", methods=["POST"])
+@cross_origin()
+def auth():
+    response = {}
+
+    if request.method == "POST":
+
+        username = request.json['username']
+        password = request.json['password']
+
+        with sqlite3.connect("Hstore.db") as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM user WHERE username='{}' AND password='{}'".format(username, password))
+            user_information = cursor.fetchone()
+
+        if user_information:
+            response["user_info"] = user_information
+            response["message"] = "Success"
+            response["status_code"] = 201
+            return jsonify(response)
+
+        else:
+            response['message'] = "Unsuccessful login, try again"
+            response['status_code'] = 401
+            return jsonify(response)
 
 
 # Function to add products to the cart
@@ -186,7 +213,7 @@ def add_property():
         finally:
             conn.close()
             return response
-
+# https://stormy-tundra-96699.herokuapp.com
 
 # function to view the entire cart
 @app.route('/view-all/', methods=["GET"])

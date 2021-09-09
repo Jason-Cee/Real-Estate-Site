@@ -15,7 +15,7 @@ let signInButton = document.querySelector("#login_form");
 function login(username, password) {
   console.log(username);
   console.log(password);
-  fetch("https://limitless-citadel-50663.herokuapp.com//auth", {
+  fetch("https://stormy-tundra-96699.herokuapp.com/auth", {
     method: "POST",
     body: JSON.stringify({
       username: `${username}`,
@@ -33,9 +33,11 @@ function login(username, password) {
         myStorage.setItem("jwt-token", data["access_token"]);
         myStorage.setItem("username", username);
         myStorage.setItem("password", password);
-        window.location.href = "/index.html";
+        window.location.href = "./index.html";
       }
     });
+
+  document.querySelector("#loginform")
 }
 
 
@@ -60,7 +62,7 @@ function registerUser() {
   } catch (e) {
     alert("Error: " + e);
   } finally {
-    fetch("https://limitless-citadel-50663.herokuapp.com/registration/", {
+    fetch("https://stormy-tundra-96699.herokuapp.com/registration/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

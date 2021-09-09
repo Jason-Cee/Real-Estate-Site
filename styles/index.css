@@ -13,15 +13,7 @@ body{
     #1b4332,
     #2d6a4f,
     #40916c,
-    #52b788,
-    #74c69d,
-    #95d5b2,
-    #b7e4c7,
-    #d8f3dc,
-    #d8f3dc, 
-    #b7e4c7,
-    #95d5b2,
-    #74c69d, 
+    #52b788, 
     #52b788,
     #40916c, 
     #2d6a4f, 
@@ -705,11 +697,20 @@ input[type=text]:placeholder {
 
 .addtocart{
   font-size: 2rem;
-  /* background: none; */
+  background: #081c15;
+  border-radius: 10px;
   position: relative;
   color: #40916c;
   cursor: pointer;
   height: 5vh;
   left: -20%;
   bottom: -100%;
+  padding: 5px;
+  transition: .3s ease-in-out;
 } 
+
+.addtocart:hover{
+  background-color: #005863;
+  color: white;
+  letter-spacing: 2px;
+}
