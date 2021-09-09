@@ -140,6 +140,7 @@ def user_registration():
                 mail.send(msg)
                 return "Registration Successful"
 
+
 @app.route("/auth/", methods=["POST"])
 @cross_origin()
 def auth():
@@ -150,7 +151,7 @@ def auth():
         username = request.json['username']
         password = request.json['password']
 
-        with sqlite3.connect("Hstore.db") as conn:
+        with sqlite3.connect("real.db") as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM user WHERE username='{}' AND password='{}'".format(username, password))
             user_information = cursor.fetchone()
@@ -189,7 +190,7 @@ def add_property():
 
             app.logger.info('%s file_to_upload', product_image)
             if product_image:
-                upload_result = cloudinary.uploader.upload(product_image)   # Upload results
+                upload_result = cloudinary.uploader.upload(product_image)  # Upload results
                 app.logger.info(upload_result)
                 data = jsonify(upload_result)
 
@@ -213,6 +214,8 @@ def add_property():
         finally:
             conn.close()
             return response
+
+
 # https://stormy-tundra-96699.herokuapp.com
 
 # function to view the entire cart

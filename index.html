@@ -1,167 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Real Estate Site</title>
-    <link rel="stylesheet" href="/styles/index.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-</head>
-<body>
-    <section class="home">
-        <div class="sidebar">
-            <div class="logo_content">
-                <div class="logo">
-                    <img src="/images/estate-logo.png" alt="Logo">
-                    <div class="logo_name"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Real Estate Site</title>
+        <link rel="stylesheet" href="/styles/index.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    </head>
+    <body>
+        <section class="home">
+            <div class="sidebar">
+                <div class="logo_content">
+                    <div class="logo">
+                        <img src="/images/estate-logo.png" alt="Logo">
+                        <div class="logo_name"></div>
+                    </div>
+                    <i class="fas fa-dungeon" id="btn"></i>
                 </div>
-                <i class="fas fa-dungeon" id="btn"></i>
-            </div>
-            <ul class="nav_list">
-                <li>
-                    <a href="/index.html">
-                        <i class="fas fa-home"></i>
-                        <span class="links_name">Home</span>
-                    </a>
-                    <span class="tooltip">Home</span>
-                </li>
-                <li>
-                    <a href="/contact.html">
-                        <i class="fas fa-phone"></i>
-                        <span class="links_name">Contact</span>
-                    </a>
-                    <span class="tooltip">Contact</span>
-                </li>
-                <li>
-                    <a href="/login.html">
-                        <i class="fas fa-user"></i>
-                        <span class="links_name">Login</span>
-                    </a>
-                    <span class="tooltip">Login</span>
-                </li>
-            </ul>
-            <div class="profile_content">
-                <div class="profile">
-                    <div class="profile_details">
-                        <img src="/images/profile.jpg" alt="Jason">
-                        <div class="name_job">
-                            <div class="name">Jason Calvert</div>
-                            <div class="job">Web Developer</div>
+                <ul class="nav_list">
+                    <li>
+                        <a href="/index.html">
+                            <i class="fas fa-home"></i>
+                            <span class="links_name">Home</span>
+                        </a>
+                        <span class="tooltip">Home</span>
+                    </li>
+                    <li>
+                        <a href="/contact.html">
+                            <i class="fas fa-phone"></i>
+                            <span class="links_name">Contact</span>
+                        </a>
+                        <span class="tooltip">Contact</span>
+                    </li>
+                    <li>
+                        <a href="/login.html">
+                            <i class="fas fa-user"></i>
+                            <span class="links_name">Login</span>
+                        </a>
+                        <span class="tooltip">Login</span>
+                    </li>
+                </ul>
+                <div class="profile_content">
+                    <div class="profile">
+                        <div class="profile_details">
+                            <img src="/images/profile.jpg" alt="Jason">
+                            <div class="name_job">
+                                <div class="name">Jason Calvert</div>
+                                <div class="job">Web Developer</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="prod">
-        <div class="container">
-            <div class="image">
-                <img src="/Constantia/outside.jpeg" alt="House" />
-                <h3 class="title">3 Bedroom House</h3>
-                <h3 class="price">R6 995 000</h3>
-                <h4 class="category"></h4>
-                <h5 class="location">Constantia</h5>
-                <button class="product-button" onclick="openModal()">View Detail</button>
-                <input type="hidden" value="50" />
-            </div>
-            <div class="image">
-                <img src="/Pinelands/front.jpeg" alt="Apartment" />
-                <h3 class="title">1 bedroom Apartment</h3>
-                <h3 class="price">R535 000</h3>
-                <h4 class="category"></h4>
-                <h5 class="location">Pinelands</h5>
-                <button class="product-button" onclick="openModal()">View Detail</button>
-            </div>
-            <div class="image">
-                <img src="/Claremont/front.jpeg" alt="House" />
-                <h3 class="title">2 bedroom House</h3>
-                <h3 class="price">R2 100 000</h3>
-                <h4 class="category"></h4>
-                <h5 class="location">Claremont</h5>
-                <button class="product-button" onclick="openModal()">View Detail</button>
-            </div>
-            <div class="image">
-                <img src="/Grassy-Park/front.jpeg" alt="Apartment" />
-                <h3 class="title">1 bedroom Apartment</h3>
-                <h3 class="price">R619 000</h3>
-                <h4 class="category"></h4>
-                <h5 class="location">Grassy Park</h5>
-                <button class="product-button" onclick="openModal()">View Detail</button>
-            </div>
-            <div class="image">
-                <img src="/Plattekloof/front.jpeg" alt="House" />
-                <h3 class="title">4 bedroom House</h3>
-                <h3 class="price">R4 800 000</h3>
-                <h4 class="category"></h4>
-                <h5 class="location">Plattekloof</h5>
-                <button class="product-button" onclick="openModal()">View Detail</button>
-            </div>
-            <div class="image">
-                <img src="/Bergvliet/front.jpeg" alt="Apartment" />
-                <h3 class="title">2 bedroom Apartment</h3>
-                <h3 class="price">R775 000</h3>
-                <h4 class="category"></h4>
-                <h5 class="location">South Field</h5>
-                <button class="product-button" onclick="openModal()">View Detail</button>
-            </div>
-            <div id="modal">
-                <div class="modal-images">
-                    <img
-                        class="big-modal-image"
-                        src="/Constantia/pool.jpeg"
-                        alt=""
-                    />
-                    <div class="small-modal-images">
-                        <img
-                            class="small-modal-image"
-                            src="/Constantia/room1.jpeg"
-                            alt=""
-                        />
-                        <img
-                            class="small-modal-image"
-                            src="/Constantia/room2.jpeg"
-                            alt=""
-                        />
-                        <img
-                            class="small-modal-image"
-                            src="/Constantia/room3.jpeg"
-                            alt=""
-                        />
-                        <img
-                            class="small-modal-image"
-                            src="/Constantia/study.jpeg"
-                            alt=""
-                        />
-                        <img
-                            class="small-modal-image"
-                            src="/Constantia/lounge.jpeg"
-                            alt=""
-                        />
-                        <img
-                            class="small-modal-image"
-                            src="/Constantia/lounge1.jpeg"
-                            alt=""
-                        />
-                    </div>
-                    
+        </section>
+        <section class="prod">
+            <div class="container">
+                <div class="image">
+                    <img src="/Constantia/outside.jpeg" alt="House" />
+                    <h3 class="title">3 Bedroom House</h3>
+                    <h3 class="price">R6 995 000</h3>
+                    <h4 class="category"></h4>
+                    <h5 class="location">Constantia</h5>
+                    <button class="product-button" onclick="openModal()">View Detail</button>
+                    <input type="hidden" value="50" />
                 </div>
-            
-                <div class="modal-content">
-                    <div>
-                        <p class="description">"Private and Secure </br> Spacious and sun-filled North-facing home located down a panhandle driveway surrounded by properties. Private and secure in Constantia Sillery! This single-storey family home has been beautifully maintained and is ready for its next owner.</br> The large, central dining room and living room with wood burning fireplace both have sliding doors opening to the covered patio and garden. To the right of the entrance hall there is a large kitchen with breakfast bar, eye level oven, integrated freezer and laundry/scullery. The kitchen is open-plan to the tv room which also has sliding doors opening onto the patio and garden. There is also a study/office off the tv room.</br>The bedroom wing, to the left of the entrance hall, consists of 3 double bedrooms all with built-in-cupboards, new carpets and a full family bathroom with ample space for a double vanity. The main bedroom is ultra-spacious with doors opening to the garden and has a dressing room and full en-suite with double vanity.</br>The covered patio with retractable awning is the best place to relax, overlooking the solar heated swimming pool and lush, established garden with mountain views. The entire house and garden are completely private and tranquil.</br>Extras include: Double garage with direct access, secure off-street parking for up to 4 vehicles, staff/guest accommodation with shower and toilet en-suite and store room.</br>Alarm system, borehole and computerized irrigation. Aluminium windows and doors throughout.</br>Call to arrange a viewing.",
+                <div class="image">
+                    <img src="/Pinelands/front.jpeg" alt="Apartment" />
+                    <h3 class="title">1 bedroom Apartment</h3>
+                    <h3 class="price">R535 000</h3>
+                    <h4 class="category"></h4>
+                    <h5 class="location">Pinelands</h5>
+                    <button class="product-button" onclick="openModal()">View Detail</button>
+                </div>
+                <div class="image">
+                    <img src="/Claremont/front.jpeg" alt="House" />
+                    <h3 class="title">2 bedroom House</h3>
+                    <h3 class="price">R2 100 000</h3>
+                    <h4 class="category"></h4>
+                    <h5 class="location">Claremont</h5>
+                    <button class="product-button" onclick="openModal()">View Detail</button>
+                </div>
+                <div class="image">
+                    <img src="/Grassy-Park/front.jpeg" alt="Apartment" />
+                    <h3 class="title">1 bedroom Apartment</h3>
+                    <h3 class="price">R619 000</h3>
+                    <h4 class="category"></h4>
+                    <h5 class="location">Grassy Park</h5>
+                    <button class="product-button" onclick="openModal()">View Detail</button>
+                </div>
+                <div class="image">
+                    <img src="/Plattekloof/front.jpeg" alt="House" />
+                    <h3 class="title">4 bedroom House</h3>
+                    <h3 class="price">R4 800 000</h3>
+                    <h4 class="category"></h4>
+                    <h5 class="location">Plattekloof</h5>
+                    <button class="product-button" onclick="openModal()">View Detail</button>
+                </div>
+                <div class="image">
+                    <img src="/Bergvliet/front.jpeg" alt="Apartment" />
+                    <h3 class="title">2 bedroom Apartment</h3>
+                    <h3 class="price">R775 000</h3>
+                    <h4 class="category"></h4>
+                    <h5 class="location">South Field</h5>
+                    <button class="product-button" onclick="openModal()">View Detail</button>
+                </div>
+                <div id="modal">
+                    <div class="modal-images">
+                        <img
+                            class="big-modal-image"
+                            src="/Constantia/pool.jpeg"
+                            alt=""
+                        />
+                        <div class="small-modal-images">
+                            <img
+                                class="small-modal-image"
+                                src="/Constantia/room1.jpeg"
+                                alt=""
+                            />
+                            <img
+                                class="small-modal-image"
+                                src="/Constantia/room2.jpeg"
+                                alt=""
+                            />
+                            <img
+                                class="small-modal-image"
+                                src="/Constantia/room3.jpeg"
+                                alt=""
+                            />
+                            <img
+                                class="small-modal-image"
+                                src="/Constantia/study.jpeg"
+                                alt=""
+                            />
+                            <img
+                                class="small-modal-image"
+                                src="/Constantia/lounge.jpeg"
+                                alt=""
+                            />
+                            <img
+                                class="small-modal-image"
+                                src="/Constantia/lounge1.jpeg"
+                                alt=""
+                            />
+                        </div>
+                        
+                    </div>
+                
+                    <div class="modal-content">
+                        <div>
+                            <p class="description">"Private and Secure </br> Spacious and sun-filled North-facing home located down a panhandle driveway surrounded by properties. Private and secure in Constantia Sillery! This single-storey family home has been beautifully maintained and is ready for its next owner.</br> The large, central dining room and living room with wood burning fireplace both have sliding doors opening to the covered patio and garden. To the right of the entrance hall there is a large kitchen with breakfast bar, eye level oven, integrated freezer and laundry/scullery. The kitchen is open-plan to the tv room which also has sliding doors opening onto the patio and garden. There is also a study/office off the tv room.</br>The bedroom wing, to the left of the entrance hall, consists of 3 double bedrooms all with built-in-cupboards, new carpets and a full family bathroom with ample space for a double vanity. The main bedroom is ultra-spacious with doors opening to the garden and has a dressing room and full en-suite with double vanity.</br>The covered patio with retractable awning is the best place to relax, overlooking the solar heated swimming pool and lush, established garden with mountain views. The entire house and garden are completely private and tranquil.</br>Extras include: Double garage with direct access, secure off-street parking for up to 4 vehicles, staff/guest accommodation with shower and toilet en-suite and store room.</br>Alarm system, borehole and computerized irrigation. Aluminium windows and doors throughout.</br>Call to arrange a viewing.",
 
+                        </div>
+                    <!-- Button to close modal. -->
+                        <button onclick="openModal()">
+                            <i class="fas fa-times fa-2x close"></i>
+                        </button>
+                        <a href="/contact.html" class="addtocart">Enquire Now !!</a>
                     </div>
-                <!-- Button to close modal. -->
-                    <button onclick="openModal()">
-                        <i class="fas fa-times fa-2x close"></i>
-                    </button>
-                    <a href="/contact.html" class="addtocart">Enquire Now !!</a>
                 </div>
             </div>
-        </div>
-        
-    </section>
-</body>
-<script src="script/index.js"></script>
+            
+        </section>
+    </body>
+    <script src="script/index.js"></script>
 </html>

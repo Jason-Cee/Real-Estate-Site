@@ -1,45 +1,44 @@
 
-let btn = document.querySelector("#btn");
-let sidebar = document.querySelector(".sidebar");
+// let btn = document.querySelector("#btn");
+// let sidebar = document.querySelector(".sidebar");
 
-btn.onclick = function() {
-    sidebar.classList.toggle("active");
+// btn.onclick = function() {
+//     sidebar.classList.toggle("active");
     
-}
+// }
 
 
 // -------------------- LOGIN FUNCTION ---------------------- //
 
-let signInButton = document.querySelector("#login_form");
 
-function login(username, password) {
-  console.log(username);
-  console.log(password);
-  fetch("https://stormy-tundra-96699.herokuapp.com/auth", {
-    method: "POST",
-    body: JSON.stringify({
-      username: `${username}`,
-      password: `${password}`,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data["access_token"]) {
-        console.log(data);
-        myStorage = window.localStorage;
-        myStorage.setItem("jwt-token", data["access_token"]);
-        myStorage.setItem("username", username);
-        myStorage.setItem("password", password);
-        window.location.href = "./index.html";
-      }
-    });
+// login
+const baseURL = "https://stormy-tundra-96699.herokuapp.com/auth/";
 
-  document.querySelector("#loginform")
-}
-
+function login() {
+    const username = document.querySelector("#username").value;
+    const password = document.querySelector("#password").value;
+    fetch(baseURL, {
+        method: "PATCH",
+        body: JSON.stringify({
+            username: username,
+            password: password,
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        },
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data.data);
+            
+            if (data.status_code == 200) {
+                window.localStorage.setItem("auth", username);
+                window.location.href="./index.html"
+            } else {
+                alert("Username and password does not match");
+            }
+        });
+};
 
 // -------------------------------------------------------------- //
 // -------------------- REGISTER FUNCTION ---------------------- //
@@ -62,7 +61,7 @@ function registerUser() {
   } catch (e) {
     alert("Error: " + e);
   } finally {
-    fetch("https://stormy-tundra-96699.herokuapp.com/registration/", {
+    fetch("https://stormy-tundra-96699.herokuapp.com/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
