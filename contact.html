@@ -10,62 +10,23 @@
 
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo_content">
-            <div class="logo">
-                <img src="/images/estate-logo.png" alt="Logo">
-                <div class="logo_name"></div>
-            </div>
-            <i class="fas fa-dungeon" id="btn"></i>
-        </div>
-        <ul class="nav_list">
-            <li>
-                <a href="/index.html">
-                    <i class="fas fa-home"></i>
-                    <span class="links_name">Home</span>
-                </a>
-                <span class="tooltip">Home</span>
-            </li>
-            <li>
-                <a href="/contact.html">
-                    <i class="fas fa-phone"></i>
-                    <span class="links_name">Contact</span>
-                </a>
-                <span class="tooltip">Contact</span>
-            </li>
-            <li>
-                <a href="/login.html">
-                    <i class="fas fa-user"></i>
-                    <span class="links_name">Login</span>
-                </a>
-                <span class="tooltip">Login</span>
-            </li>
-        </ul>
-        <div class="profile_content">
-            <div class="profile">
-                <div class="profile_details">
-                    <img src="/images/profile.jpg" alt="Jason">
-                    <div class="name_job">
-                        <div class="name">Jason Calvert</div>
-                        <div class="job">Web Developer</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
+    <form 
+      method="POST" 
+      action="https://formspree.io/f/xknkklya"
+      class="container"
+    >
         <div class="contact-box">
             <div class="left"></div>
                 <div class="rigt">
                     <h3>Get In Touch</h3>
-                    <input type="text" class="field" placeholder="Name & Surname">
-                    <input type="email" class="field" placeholder="Email Address">
-                    <input type="text" class="field" placeholder="Phone Number">
-                    <textarea class="field area" placeholder="Message"></textarea>
-                    <button class="btn">Send</button>
+                    <input type="text" name="name" class="field" placeholder="Name & Surname" required>
+                    <input type="email" name="email" class="field" placeholder="Email Address" required>
+                    <input type="text" name="number" class="field" placeholder="Phone Number" required>
+                    <textarea class="field area" name="message" placeholder="Message"></textarea>
+                    <button class="btn" type="submit">Send</button>
                 </div>
         </div>
-    </div>
+    </form>
 </body>
 <script src="/script/index.js"></script>
 </html>

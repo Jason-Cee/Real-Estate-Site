@@ -66,16 +66,45 @@ let products = [
   },
 ];
 
-for (let j = 0; j < carts.length; j++) {
-  carts[j].addEventListener("click", () => {
-    cartNumbers(products[j]);
-    totalCost(products[j]);
-    // console.log("Added to Cart");
-  });
-}
-
 
 function openModal() {
-  document.getElementById("modal").classList.toggle("modal-active");
+  var blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  var popup = document.getElementById('popup');
+  popup.classList.toggle('active')
 }
 
+function openModal1() {
+  var blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  var popup1 = document.getElementById('popup1');
+  popup1.classList.toggle('active')
+}
+
+function openModal2() {
+  var blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  var popup2 = document.getElementById('popup2');
+  popup2.classList.toggle('active')
+}
+
+function openModal3() {
+  var blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  var popup3 = document.getElementById('popup3');
+  popup3.classList.toggle('active')
+}
+
+function openModal4() {
+  var blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  var popup4 = document.getElementById('popup4');
+  popup4.classList.toggle('active')
+}
+
+function openModal5() {
+  var blur = document.getElementById('blur');
+  blur.classList.toggle('active')
+  var popup5 = document.getElementById('popup5');
+  popup5.classList.toggle('active')
+}

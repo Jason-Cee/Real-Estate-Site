@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Real Estate Site</title>
         <link rel="stylesheet" href="/styles/index.css">
+        <link rel="stylesheet" href="/styles/admin.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     </head>
     <body>
@@ -54,115 +55,137 @@
                 </div>
             </div>
         </section>
-        <section class="prod">
-            <div class="container">
-                <div class="image">
-                    <img src="/Constantia/outside.jpeg" alt="House" />
-                    <h3 class="title">3 Bedroom House</h3>
-                    <h3 class="price">R6 995 000</h3>
-                    <h4 class="category"></h4>
-                    <h5 class="location">Constantia</h5>
-                    <button class="product-button" onclick="openModal()">View Detail</button>
-                    <input type="hidden" value="50" />
-                </div>
-                <div class="image">
-                    <img src="/Pinelands/front.jpeg" alt="Apartment" />
-                    <h3 class="title">1 bedroom Apartment</h3>
-                    <h3 class="price">R535 000</h3>
-                    <h4 class="category"></h4>
-                    <h5 class="location">Pinelands</h5>
-                    <button class="product-button" onclick="openModal()">View Detail</button>
-                </div>
-                <div class="image">
-                    <img src="/Claremont/front.jpeg" alt="House" />
-                    <h3 class="title">2 bedroom House</h3>
-                    <h3 class="price">R2 100 000</h3>
-                    <h4 class="category"></h4>
-                    <h5 class="location">Claremont</h5>
-                    <button class="product-button" onclick="openModal()">View Detail</button>
-                </div>
-                <div class="image">
-                    <img src="/Grassy-Park/front.jpeg" alt="Apartment" />
-                    <h3 class="title">1 bedroom Apartment</h3>
-                    <h3 class="price">R619 000</h3>
-                    <h4 class="category"></h4>
-                    <h5 class="location">Grassy Park</h5>
-                    <button class="product-button" onclick="openModal()">View Detail</button>
-                </div>
-                <div class="image">
-                    <img src="/Plattekloof/front.jpeg" alt="House" />
-                    <h3 class="title">4 bedroom House</h3>
-                    <h3 class="price">R4 800 000</h3>
-                    <h4 class="category"></h4>
-                    <h5 class="location">Plattekloof</h5>
-                    <button class="product-button" onclick="openModal()">View Detail</button>
-                </div>
-                <div class="image">
-                    <img src="/Bergvliet/front.jpeg" alt="Apartment" />
-                    <h3 class="title">2 bedroom Apartment</h3>
-                    <h3 class="price">R775 000</h3>
-                    <h4 class="category"></h4>
-                    <h5 class="location">South Field</h5>
-                    <button class="product-button" onclick="openModal()">View Detail</button>
-                </div>
-                <div id="modal">
-                    <div class="modal-images">
-                        <img
-                            class="big-modal-image"
-                            src="/Constantia/pool.jpeg"
-                            alt=""
-                        />
-                        <div class="small-modal-images">
-                            <img
-                                class="small-modal-image"
-                                src="/Constantia/room1.jpeg"
-                                alt=""
-                            />
-                            <img
-                                class="small-modal-image"
-                                src="/Constantia/room2.jpeg"
-                                alt=""
-                            />
-                            <img
-                                class="small-modal-image"
-                                src="/Constantia/room3.jpeg"
-                                alt=""
-                            />
-                            <img
-                                class="small-modal-image"
-                                src="/Constantia/study.jpeg"
-                                alt=""
-                            />
-                            <img
-                                class="small-modal-image"
-                                src="/Constantia/lounge.jpeg"
-                                alt=""
-                            />
-                            <img
-                                class="small-modal-image"
-                                src="/Constantia/lounge1.jpeg"
-                                alt=""
-                            />
-                        </div>
-                        
-                    </div>
-                
-                    <div class="modal-content">
-                        <div>
-                            <p class="description">"Private and Secure </br> Spacious and sun-filled North-facing home located down a panhandle driveway surrounded by properties. Private and secure in Constantia Sillery! This single-storey family home has been beautifully maintained and is ready for its next owner.</br> The large, central dining room and living room with wood burning fireplace both have sliding doors opening to the covered patio and garden. To the right of the entrance hall there is a large kitchen with breakfast bar, eye level oven, integrated freezer and laundry/scullery. The kitchen is open-plan to the tv room which also has sliding doors opening onto the patio and garden. There is also a study/office off the tv room.</br>The bedroom wing, to the left of the entrance hall, consists of 3 double bedrooms all with built-in-cupboards, new carpets and a full family bathroom with ample space for a double vanity. The main bedroom is ultra-spacious with doors opening to the garden and has a dressing room and full en-suite with double vanity.</br>The covered patio with retractable awning is the best place to relax, overlooking the solar heated swimming pool and lush, established garden with mountain views. The entire house and garden are completely private and tranquil.</br>Extras include: Double garage with direct access, secure off-street parking for up to 4 vehicles, staff/guest accommodation with shower and toilet en-suite and store room.</br>Alarm system, borehole and computerized irrigation. Aluminium windows and doors throughout.</br>Call to arrange a viewing.",
-
-                        </div>
-                    <!-- Button to close modal. -->
-                        <button onclick="openModal()">
-                            <i class="fas fa-times fa-2x close"></i>
-                        </button>
-                        <a href="/contact.html" class="addtocart">Enquire Now !!</a>
-                    </div>
-                </div>
+        <div class="container" id="blur">
+            <div class="prop-content">
+                <img src="/Constantia/out.jpeg" alt="">
+                <h3>3 Bedroom House</h3>
+                <h3>R6 995 000</h3>
+                <h3>Constantia</h3>
+                <a onclick="openModal()" >View More</a>
             </div>
-            
-        </section>
-        <script src="script/index.js"></script>
+            <div class="prop-content1">
+                <img src="/Pinelands/front.jpeg" alt="">
+                <h3>1 Bedroom Apartment</h3>
+                <h3>R535 000</h3>
+                <h3>Pinelands</h3>
+                <a onclick="openModal1()" >View More</a>
+            </div>
+            <div class="prop-content2">
+                <img src="/Claremont/front.jpeg" alt="">
+                <h3>2 Bedroom House</h3>
+                <h3>R2 100 000</h3>
+                <h3>Claremont</h3>
+                <a onclick="openModal2()" >View More</a>
+            </div>
+            <div class="prop-content3">
+                <img src="/Grassy-Park/front.jpeg" alt="">
+                <h3>1 Bedroom Apartment</h3>
+                <h3>R619 000</h3>
+                <h3>Grassy Park</h3>
+                <a onclick="openModal3()" >View More</a>
+            </div>
+            <div class="prop-content4">
+                <img src="/Plattekloof/front.jpeg" alt="">
+                <h3>4 Bedroom House</h3>
+                <h3>R4 800 000</h3>
+                <h3>Plattekloof</h3>
+                <a onclick="openModal4()" >View More</a>
+            </div>
+            <div class="prop-content5">
+                <img src="/Bergvliet/front.jpeg" alt="">
+                <h3>2 Bedroom Apartment</h3>
+                <h3>R775 000</h3>
+                <h3>South Field</h3>
+                <a onclick="openModal5()" >View More</a>
+            </div>
+        </div>
+        <div id="popup">
+            <div class="big-modal-image"><img src="/Constantia/pool.jpeg" alt=""></div>
+            <p>Private and Secure </br> Spacious and sun-filled North-facing home located down a panhandle driveway surrounded by properties. Private and secure in Constantia Sillery! This single-storey family home has been beautifully maintained and is ready for its next owner.</br> The large, central dining room and living room with wood burning fireplace both have sliding doors opening to the covered patio and garden. To the right of the entrance hall there is a large kitchen with breakfast bar, eye level oven, integrated freezer and laundry/scullery. The kitchen is open-plan to the tv room which also has sliding doors opening onto the patio and garden. There is also a study/office off the tv room.</br>The bedroom wing, to the left of the entrance hall, consists of 3 double bedrooms all with built-in-cupboards, new carpets and a full family bathroom with ample space for a double vanity. The main bedroom is ultra-spacious with doors opening to the garden and has a dressing room and full en-suite with double vanity.</br>The covered patio with retractable awning is the best place to relax, overlooking the solar heated swimming pool and lush, established garden with mountain views. The entire house and garden are completely private and tranquil.</br>Extras include: Double garage with direct access, secure off-street parking for up to 4 vehicles, staff/guest accommodation with shower and toilet en-suite and store room.</br>Alarm system, borehole and computerized irrigation. Aluminium windows and doors throughout.</br>Call to arrange a viewing.</p>
+            <div class="small-modal-images">
+                <img class="small-modal-image" src="/Constantia/bed2.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Constantia/room1.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Constantia/study.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Constantia/kitchen.jpeg" alt="kitchen">
+                <img class="small-modal-image" src="/Constantia/lounge.jpeg" alt="Lounge">
+                <img class="small-modal-image" src="/Constantia/dine.jpeg" alt="Outside">
+                <a href="#" onclick="openModal()">Close</a>
+
+            </div>
+        </div>
+        <div id="popup1">
+            <div class="big-modal-image"><img src="/Pinelands/balcony.jpeg" alt=""></div>
+            <p>Apartments for Sale Conradie Park (Paarl Rock) Pinelands from R535 000</br>Conradie park is arguably the best mixed-use development in the Western Cape. The location is Pinelands, which is close to Cape Town CBD. The development will give you a lifestyle far superior to most where you will enjoy the following features and amenities.</br>Private schools (Primary and High School)</br>Sports centre</br>3 Crèches</br>Hotel</br>Mixed residential housing – FLISP and ordinary housing</br>Community Centre</br>Gym</br>Doggy Day-care</br>Commercial (Offices)</br>Retail (Shopping Centre)</br>Parks and kids play facilities</br>State of the art security with 24/7 NPR cameras</br>Old Mutual head office is just a stone throw away from here, so therefore demand is high for people wanting to live close to work as well as investors wanting to take advantage of the fantastic location. It is also within walking distance of business nodes such as Maitland, Ndabeni and Epping. Observatory, Salt river, Woodstock, Paarden Eiland and Century City are only a 5-minute drive away approximately. And most importantly Cape Town CBD is just a 5 – 10-minute drive.</p>
+            <div class="small-modal-images">
+                <img class="small-modal-image" src="/Pinelands/room.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Pinelands/bath.jpeg" alt="Bathroom">
+                <img class="small-modal-image" src="/Pinelands/kitchen.jpeg" alt="Kitchen">
+                <img class="small-modal-image" src="/Pinelands/lounge.jpeg" alt="Lounge">
+                <a href="#" onclick="openModal1()">Close</a>
+
+            </div>
+        </div>
+        <div id="popup2">
+            <div class="big-modal-image"><img src="/Claremont/front.jpeg" alt="Front House"></div>
+            <p>Charming Cottage in Claremont!</br>Starting up or scaling down? This is the perfect property for you!</br>Walk in to original Oregon flooring, high ceilings and a mix of modern flair. The lounge area is spacious, with an added bonus of a wood burning fireplace to keep you cosy. The kitchen is open plan with plenty space, cupboards and a lovely addition of a Smeg gas hob with oven and extractor fan! Melamine counter tops plus the added bonus of a Swan dishwasher. The back door with stained glass leads out to a perfect entertainment spot with pine decking and a built-in braai. Plenty space for friends and family plus a seating area with storage underneath. </br>The bedrooms are both substantial in size, with built-in cupboards and Oregon flooring. The separate bathroom has both a bath and shower, modern vanity plus a handheld showerhead in the bath. Plumbing for a washing machine in the bathroom.</br>Additional information:</br>*Alarm with a back beam.</br>*Fibre installed.</br>*Pre-paid electricity.</br>*On street parking.</p>
+            <div class="small-modal-images">
+                <img class="small-modal-image" src="/Claremont/room1.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Claremont/room2.jpeg" alt="Bathroom">
+                <img class="small-modal-image" src="/Claremont/study1.jpeg" alt="Kitchen">
+                <img class="small-modal-image" src="/Claremont/lounge.jpeg" alt="Lounge">
+                <img class="small-modal-image" src="/Claremont/kitchen1.jpeg" alt="Lounge">
+                <a href="#" onclick="openModal2()">Close</a>
+
+            </div>
+        </div>
+        <div id="popup3">
+            <div class="big-modal-image"><img src="/Grassy-Park/front.jpeg" alt="Open Plan"></div>
+            <p>Apartment for Sale in Grassy Park</br>Everyone needs a place of sanctuary. A place to retreat, reflect and just be you. A space you define as much as it defines you. Now more than ever, the meaning of home itself has evolved and requires spaces to provide a balance between work and play. Relaxation and expression. This is a newly RENOVATED 2 bedroom APARTMENT with semi open plan living...brand new aluminium windows and new flooring to match. Close to all amenities in Grassy Park.</p>
+            <div class="small-modal-images">
+                <img class="small-modal-image" src="/Grassy-Park/room.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Grassy-Park/bathroom.jpeg" alt="Bathroom">
+                <img class="small-modal-image" src="/Grassy-Park/kitchen.jpeg" alt="Kitchen">
+                <img class="small-modal-image" src="/Grassy-Park/kitchen2.jpeg" alt="Kitchen">
+                <img class="small-modal-image" src="/Grassy-Park/lounge.jpeg" alt="Lounge">
+                <img class="small-modal-image" src="/Grassy-Park/open.jpeg" alt="Open">
+                <a href="#" onclick="openModal3()">Close</a>
+
+            </div>
+        </div>
+        <div id="popup4">
+            <div class="big-modal-image"><img src="/Plattekloof/front.jpeg" alt="Front House"></div>
+            <p>Spacious family home in prime position</br>There's something about this home in this yesteryear neighbourhood of Plattekloof and street with happy children that feeds your soul; it could be the expanse of the high ceilings of the living area, the peaceful views over the expansive garden and Table Mountain, and the bespoke attention to detail throughout the home.</br>Whatever it might be, this home gives a true feeling of peace.</br>The enormous family room, lounge, and dining room offer a great lifestyle and entertainment versatility. The passage leads to four bedrooms with two bathrooms (one en-suite) that catch the afternoon sun. The sumptuous master suite is sun-drenched and welcoming. Expansive open-plan gourmet kitchen. The home has a wrap-around garden with an east-facing inviting courtyard, 2× double garage, loads of guest parking, koi pond which completes the picture of this comfortable home. This home is also within walking distance of shopping centres.</br>This home is ideal for a homeowner looking for the full package.\n</p>
+            <div class="small-modal-images">
+                <img class="small-modal-image" src="/Plattekloof/bed.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Plattekloof/bedroom.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Plattekloof/room1.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Plattekloof/bed1.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Plattekloof/kitchen.jpeg" alt="Kitchen">
+                <img class="small-modal-image" src="/Plattekloof/lounge.jpeg" alt="Lounge">
+                <img class="small-modal-image" src="/Plattekloof/outside1.jpeg" alt="Open">
+                <img class="small-modal-image" src="/Plattekloof/save.jpeg" alt="Open">
+                <a href="#" onclick="openModal4()">Close</a>
+
+            </div>
+        </div>
+        <div id="popup5">
+            <div class="big-modal-image"><img src="/Bergvliet/front.jpeg" alt="Complex"></div>
+            <p>This neat, two-bedroom apartment is located in a secure and well-run complex in a quiet</br>corner of Southfield, close to major transport routes, shops, schools and daycares.</br>The kitchen has built in cupboards with a stove and hob and leads to your open plan living area. There is a private balcony for you to sit on while enjoying the sunset after a hard day or while entertaining a few friends.</br>Both bedrooms are carpeted and have built in cupboards. The bathroom has a shower and is plumbed for a washing machine. There is fibre in the complex and a router is already in-stalled in the unit.</br>Great for first time buyers or young families.</p>
+            <div class="small-modal-images">
+                <img class="small-modal-image" src="/Bergvliet/bed.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Bergvliet/bed2.jpeg" alt="Bedroom">
+                <img class="small-modal-image" src="/Bergvliet/kitchen1.jpeg" alt="Kitchen">
+                <img class="small-modal-image" src="/Bergvliet/kitchen2.jpeg" alt="Kitchen">
+                <img class="small-modal-image" src="/Bergvliet/lounge.jpeg" alt="Lounge">
+                <img class="small-modal-image" src="/Bergvliet/lounge2.jpeg" alt="Lounge">
+                <img class="small-modal-image" src="/Bergvliet/bathroom.jpeg" alt="Bathroom">
+                <img class="small-modal-image" src="/Bergvliet/bathroom2.jpeg" alt="Bathroom">
+                <a href="#" onclick="openModal5()">Close</a>
+
+            </div>
+        </div>
+        <script src="/script/index.js"></script>
+        <!-- <script src="/script/admin.js"></script> -->
     </body>
     
 </html>

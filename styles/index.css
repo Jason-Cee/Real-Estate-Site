@@ -7,7 +7,7 @@
 
 body{
     position: relative;
-    height: 100vh;
+    min-height: auto;
     width: 100vw;
     background: linear-gradient(#081c15,
     #1b4332,
@@ -19,6 +19,7 @@ body{
     #2d6a4f, 
     #1b4332, 
     #081c15);
+    overflow: hidden;
 
 }
 
@@ -641,13 +642,15 @@ input[type=text]:placeholder {
   height: 700px;
 }
 
-.modal-content {
+.prod-content {
   min-width: 50%;
   height: 25vh;
 }
 
 .big-modal-image {
   display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   padding-top: 20px;
   margin-bottom: 20px;
@@ -656,24 +659,25 @@ input[type=text]:placeholder {
 }
 
 .big-modal-image:hover {
-  width: 60%;
+  width: 30%;
   object-fit: cover;
 }
 .small-modal-images {
   display: flex;
   justify-content: center;
   transition: 0.3s ease-in;
-  margin-top: 90px;
-  margin-left: 47rem;
+  width: 5%;
+  /* margin-top: 90px;
+  margin-left: 47rem; */
 }
 
 .small-modal-image {
   /* margin-top: 20px; */
-  width: 180px;
+  width: 100px;
 }
 
 .small-modal-image:hover {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   width: 300px;
 }
 #modal i {
@@ -714,3 +718,458 @@ input[type=text]:placeholder {
   color: white;
   letter-spacing: 2px;
 }
+
+
+.container{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  transition: 0.5s;
+  padding: 20px;
+}
+
+.container#blur.active{
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------- MODAL 1 --------- */
+.prop-content{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border: 10px solid;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+  padding: 10px;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.prop-content h3{
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.prop-content a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#popup{
+  background: white;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  padding: 50px;
+  box-shadow: 0 5px 30px  rgba(0, 0, 0, .30);
+  display: none;
+  visibility: none;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+#popup.active{
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  pointer-events: initial;
+  
+}
+
+#popup.active a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* --------- MODAL 2 --------- */
+.prop-content1{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border: 10px solid;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+  padding: 10px;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.prop-content1 h3{
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.prop-content1 a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#popup1{
+  background: white;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  padding: 50px;
+  box-shadow: 0 5px 30px  rgba(0, 0, 0, .30);
+  display: none;
+  visibility: none;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+#popup1.active{
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  pointer-events: initial;  
+}
+
+#popup1.active a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* --------- MODAL 3 --------- */
+.prop-content2{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border: 10px solid;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+  padding: 10px;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.prop-content2 h3{
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.prop-content2 a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#popup2{
+  background: white;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  padding: 50px;
+  box-shadow: 0 5px 30px  rgba(0, 0, 0, .30);
+  display: none;
+  visibility: none;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+#popup2.active{
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  pointer-events: initial;  
+}
+
+#popup2.active a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* --------- MODAL 4 --------- */
+.prop-content3{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border: 10px solid;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+  padding: 10px;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.prop-content3 h3{
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.prop-content3 a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#popup3{
+  background: white;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  padding: 50px;
+  box-shadow: 0 5px 30px  rgba(0, 0, 0, .30);
+  display: none;
+  visibility: none;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+#popup3.active{
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  pointer-events: initial;  
+}
+
+#popup3.active a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* --------- MODAL 5 --------- */
+.prop-content4{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border: 10px solid;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+  padding: 10px;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.prop-content4 h3{
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.prop-content4 a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#popup4{
+  background: white;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  padding: 50px;
+  box-shadow: 0 5px 30px  rgba(0, 0, 0, .30);
+  display: none;
+  visibility: none;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+#popup4.active{
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  pointer-events: initial;  
+}
+
+#popup4.active a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* --------- MODAL 6 --------- */
+.prop-content5{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border: 10px solid;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+  padding: 10px;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.prop-content5 h3{
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.prop-content5 a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#popup5{
+  background: white;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  padding: 50px;
+  box-shadow: 0 5px 30px  rgba(0, 0, 0, .30);
+  display: none;
+  visibility: none;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+#popup5.active{
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  pointer-events: initial;  
+}
+
+#popup5.active a{
+  position: relative;
+  padding: 5px 20px;
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
