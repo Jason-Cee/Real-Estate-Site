@@ -12,7 +12,7 @@ if (reg_form != null) {
         first_name: document.querySelector("#first_name").value,
         last_name: document.querySelector("#last_name").value,
         username: document.querySelector("#username").value,
-        // email: document.querySelector("#email").value,
+        email: document.querySelector("#email").value,
         password: document.querySelector("#password").value,
       };
 
@@ -30,7 +30,7 @@ if (reg_form != null) {
           if(data.status_code === 201) {
             window.localStorage.setItem("user", JSON.stringify(new_user));
             alert("successful registration")
-            // window.location.href = "./login.html";
+            window.location.href = "./login.html";
           } else {
             alert("unsuccessful registration")
             
