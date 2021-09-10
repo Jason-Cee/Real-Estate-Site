@@ -152,6 +152,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    margin-top: 9rem;
   }
   .sign {
     width: 100%;
