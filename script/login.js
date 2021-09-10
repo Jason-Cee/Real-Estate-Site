@@ -16,7 +16,7 @@ let signInButton = document.querySelector("#login_form");
 function login(username, password) {
   console.log(username);
   console.log(password);
-  fetch("https://stormy-tundra-96699.herokuapp.com//auth/", {
+  fetch("https://stormy-tundra-96699.herokuapp.com/auth", {
     method: "POST",
     body: JSON.stringify({
       username: `${username}`,
@@ -35,12 +35,12 @@ function login(username, password) {
         myStorage.setItem("username", username);
         myStorage.setItem("password", password);
       }
-        window.location.replace("/index.html");
+        // window.location.replace("/index.html");
 
     });
 }
 
-document.querySelector("#login_form").addEventListener("submit", (e) => {
+document.getElementById("login_form").addEventListener("submit", (e) => {
   let username = document.querySelector("#username").value;
   let password = document.querySelector("#password").value;
   e.preventDefault();
@@ -50,50 +50,41 @@ document.querySelector("#login_form").addEventListener("submit", (e) => {
 // -------------------------------------------------------------- //
 // -------------------- REGISTER FUNCTION ---------------------- //
 
-function registerUser() {
-  const name = document.getElementById("first_name").value;
-  const surname = document.getElementById("last_name").value;
-  const email = document.getElementById("email").value;
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
+let reg_form = document.querySelector(".registration-form");
+if (reg_form != null) {
+    reg_form.addEventListener("submit", (e) => {
+      //  PREVENT THE DEFAULT ACTION OF THE FORM
+      e.preventDefault();
 
-  try {
-    if (
-      typeof name === "number" ||
-      typeof surname === "number" ||
-      typeof cell === "string"
-    ) {
-      throw "Please use the proper format for each section";
-    }
-  } 
-  catch (e) {
-    alert("Error: " + e);
-  } 
-  finally {
-    fetch("https://stormy-tundra-96699.herokuapp.com/registration/", {
-      method: "POST",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
-      body: JSON.stringify({
-        first_name: name,
-        last_name: surname,
-        email: email,
-        username: username,
-        password: password,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        console.log("Your details have successfully been registered");
+      //  CREATE AN OBJECT CONTAINING ALL THE INPUTS VALUES
+      let new_user = {
+        first_name: document.querySelector("#first_name").value,
+        last_name: document.querySelector("#last_name").value,
+        username: document.querySelector("#username").value,
+        // email: document.querySelector("#email").value,
+        password: document.querySelector("#password").value,
+      };
 
-        if (data["message"] == "Success") {
-          alert("Please Sign In On Next Page");
-          window.location.href = "./login.html";
-        } else {
-          alert("Please Fill In The Required Fields Correctly");
-        }
-      });
+      console.log(new_user);
+  
+      fetch("https://stormy-tundra-96699.herokuapp.com/registration", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(new_user)
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if(data.status_code === 201) {
+            window.localStorage.setItem("user", JSON.stringify(new_user));
+            alert("successful registration")
+            // window.location.href = "./login.html";
+          } else {
+            alert("unsuccessful registration")
+            
+          }
+         
+        });
+    });
   }
-}
