@@ -6,8 +6,8 @@ from flask import Flask, request, jsonify
 from flask_jwt import JWT, jwt_required, current_identity
 from flask_cors import CORS, cross_origin
 from flask_mail import Mail, Message
-import cloudinary
-from cloudinary import uploader
+# import cloudinary
+# from cloudinary import uploader
 
 
 class User(object):
@@ -184,15 +184,15 @@ def add_property():
             product_image = request.json['img']
             date_created = datetime.datetime.now()
 
-            cloudinary.config(cloud_name='dkjvy0lsk', api_key='341771532432914',
-                              api_secret='860zypKrIl-scl-EGZxNjwkAm-8')
-            upload_result = None
+            # cloudinary.config(cloud_name='dkjvy0lsk', api_key='341771532432914',
+            #                   api_secret='860zypKrIl-scl-EGZxNjwkAm-8')
+            # upload_result = None
 
-            app.logger.info('%s file_to_upload', product_image)
-            if product_image:
-                upload_result = cloudinary.uploader.upload(product_image)  # Upload results
-                app.logger.info(upload_result)
-                data = jsonify(upload_result)
+            # app.logger.info('%s file_to_upload', product_image)
+            # if product_image:
+            #     upload_result = cloudinary.uploader.upload(product_image)  # Upload results
+            #     app.logger.info(upload_result)
+            #     data = jsonify(upload_result)
 
             with sqlite3.connect('real.db') as conn:
                 cursor = conn.cursor()
